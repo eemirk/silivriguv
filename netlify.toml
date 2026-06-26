@@ -53,6 +53,41 @@
   status = 200
 
 [[redirects]]
+  from = "/hakkimizda"
+  to = "/hakkimizda.html"
+  status = 200
+
+[[redirects]]
+  from = "/galeri"
+  to = "/galeri.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog-silivri-nakliyat-fiyatlari"
+  to = "/blog-silivri-nakliyat-fiyatlari.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog-tasinma-kontrol-listesi"
+  to = "/blog-tasinma-kontrol-listesi.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog-esya-paketleme-rehberi"
+  to = "/blog-esya-paketleme-rehberi.html"
+  status = 200
+
+[[redirects]]
+  from = "/sss"
+  to = "/sss.html"
+  status = 200
+
+[[redirects]]
   from = "/hizmetler"
   to = "/hizmetler.html"
   status = 200

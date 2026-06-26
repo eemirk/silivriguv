@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
@@ -135,20 +135,33 @@
 </head>
 <body class="bg-white text-zinc-900 font-sans antialiased">
 
+    <!-- Top Bar -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-[#1a1f3c] border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-1.5 flex items-center justify-between">
+            <span class="text-[11px] font-medium tracking-wide text-white/80 hidden sm:block">SİLİVRİ EVDEN EVE NAKLİYAT | GÜVEN NAKLİYAT</span>
+            <span class="text-[11px] font-medium tracking-wide text-white/80 sm:hidden">GÜVEN NAKLİYAT</span>
+            <div class="flex items-center gap-3">
+                <a href="https://www.instagram.com/silivriguvennakliyat/" target="_blank" rel="nofollow noopener noreferrer" class="text-white/60 hover:text-white transition-colors"><i class="ti ti-brand-instagram text-sm"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100088395197422" target="_blank" rel="nofollow noopener noreferrer" class="text-white/60 hover:text-white transition-colors"><i class="ti ti-brand-facebook text-sm"></i></a>
+                <a href="https://wa.me/905414611984" target="_blank" rel="nofollow noopener noreferrer" class="text-white/60 hover:text-white transition-colors"><i class="ti ti-brand-whatsapp text-sm"></i></a>
+            </div>
+        </div>
+    </div>
+
     <!-- ============ NAVIGATION ============ -->
-    <nav class="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
+    <nav class="fixed top-[32px] left-0 right-0 z-40 bg-[#1a1f3c]/95 backdrop-blur-xl border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="/" class="flex items-center gap-2">
                 <div class="w-9 h-9 bg-red-600 rounded-lg flex items-center justify-center">
                     <i class="ti ti-truck text-white text-lg"></i>
                 </div>
-                <span class="text-lg font-bold tracking-tight text-zinc-900">Güven <span class="text-red-600">Nakliyat</span></span>
+                <span class="text-lg font-bold tracking-tight text-white">Güven <span class="text-red-500">Nakliyat</span></span>
             </a>
 
-            <div class="hidden lg:flex items-center gap-6">
-                <a href="/" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">Ana Sayfa</a>
+            <div class="hidden lg:flex items-center gap-5">
+                <a href="/" class="text-sm text-white/70 hover:text-white transition-colors">Ana Sayfa</a>
                 <div class="relative group">
-                    <a href="/hizmetler" class="text-sm text-red-600 font-medium transition-colors flex items-center gap-1">Hizmetler<i class="ti ti-chevron-down text-xs transition-transform group-hover:rotate-180"></i></a>
+                    <a href="/hizmetler" class="text-sm text-red-400 font-medium transition-colors flex items-center gap-1">Hizmetler<i class="ti ti-chevron-down text-xs transition-transform group-hover:rotate-180"></i></a>
                     <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                         <div class="bg-white rounded-xl shadow-lg border border-zinc-100 py-2 w-56">
                             <a href="/silivri-evden-eve-nakliyat" class="block px-4 py-2.5 text-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition-colors">Evden Eve Nakliyat</a>
@@ -161,30 +174,38 @@
                         </div>
                     </div>
                 </div>
-                <a href="/iletisim" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">İletişim</a>
+                <a href="/hakkimizda" class="text-sm text-white/70 hover:text-white transition-colors">Hakkımızda</a>
+                <a href="/galeri" class="text-sm text-white/70 hover:text-white transition-colors">Galeri</a>
+                <a href="/blog" class="text-sm text-white/70 hover:text-white transition-colors">Blog</a>
+                <a href="/sss" class="text-sm text-white/70 hover:text-white transition-colors">SSS</a>
+                <a href="/iletisim" class="text-sm text-white/70 hover:text-white transition-colors">İletişim</a>
                 <a href="#teklif" class="text-sm font-medium text-white bg-red-600 hover:bg-red-700 px-5 py-2 rounded-lg transition-colors">Teklif Al</a>
-                <a href="tel:+905414611984" class="flex items-center gap-2 text-sm font-medium text-red-600 hover:text-red-700 transition-colors">
+                <a href="tel:+905414611984" class="flex items-center gap-2 text-sm font-medium text-red-400 hover:text-red-300 transition-colors">
                     <i class="ti ti-phone text-base"></i>
                     0 541 461 19 84
                 </a>
             </div>
-            <button id="menuBtn" class="lg:hidden p-2 text-zinc-500 hover:text-zinc-900 transition-colors" aria-label="Menüyü aç">
+            <button id="menuBtn" class="lg:hidden p-2 text-white/70 hover:text-white transition-colors" aria-label="Menüyü aç">
                 <i class="ti ti-menu-2 text-xl" id="menuIcon"></i>
             </button>
         </div>
 
-        <div id="mobileMenu" class="lg:hidden bg-white/95 backdrop-blur-xl border-b border-zinc-200">
+        <div id="mobileMenu" class="lg:hidden bg-[#1a1f3c]/98 backdrop-blur-xl border-b border-white/10">
             <div class="px-6 py-5 flex flex-col gap-5">
-                <a href="/" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors mobile-link">Ana Sayfa</a>
-                <a href="/hizmetler" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors mobile-link">Hizmetler</a>
-                <a href="/silivri-evden-eve-nakliyat" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors mobile-link">Evden Eve Nakliyat</a>
-                <a href="/silivri-sehir-ici-nakliyat" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors mobile-link">Şehir İçi Nakliyat</a>
-                <a href="/silivri-sehirler-arasi-nakliyat" class="text-sm text-red-600 font-medium transition-colors mobile-link">Şehirler Arası Nakliyat</a>
-                <a href="/silivri-ofis-tasima" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors mobile-link">Ofis Taşıma</a>
-                <a href="/silivri-asansorlu-nakliyat" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors mobile-link">Asansörlü Nakliyat</a>
-                <a href="/iletisim" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors mobile-link">İletişim</a>
+                <a href="/" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Ana Sayfa</a>
+                <a href="/hizmetler" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Hizmetler</a>
+                <a href="/silivri-evden-eve-nakliyat" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Evden Eve Nakliyat</a>
+                <a href="/silivri-sehir-ici-nakliyat" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Şehir İçi Nakliyat</a>
+                <a href="/silivri-sehirler-arasi-nakliyat" class="text-sm text-red-400 font-medium transition-colors mobile-link">Şehirler Arası Nakliyat</a>
+                <a href="/silivri-ofis-tasima" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Ofis Taşıma</a>
+                <a href="/silivri-asansorlu-nakliyat" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Asansörlü Nakliyat</a>
+                <a href="/hakkimizda" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Hakkımızda</a>
+                <a href="/galeri" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Galeri</a>
+                <a href="/blog" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Blog</a>
+                <a href="/sss" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">SSS</a>
+                <a href="/iletisim" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">İletişim</a>
                 <a href="#teklif" class="text-sm font-medium text-white bg-red-600 px-5 py-2.5 rounded-lg text-center mobile-link">Teklif Al</a>
-                <a href="tel:+905414611984" class="flex items-center gap-2 text-sm font-medium text-red-600 mobile-link">
+                <a href="tel:+905414611984" class="flex items-center gap-2 text-sm font-medium text-red-400 mobile-link">
                     <i class="ti ti-phone text-base"></i>
                     0 541 461 19 84
                 </a>
@@ -195,7 +216,7 @@
     <main>
 
         <!-- ============ HERO ============ -->
-        <section class="relative pt-16">
+        <section class="relative pt-24">
             <div class="relative h-[60vh] min-h-[400px] max-h-[600px] overflow-hidden bg-zinc-800">
                 <img src="assets/sehirler-arasi-hero.jpg" alt="Silivri şehirler arası nakliyat hizmeti" class="absolute inset-0 w-full h-full object-cover opacity-60">
                 <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-zinc-900/40 to-zinc-900/20"></div>
@@ -534,6 +555,8 @@
                     <div class="flex items-center gap-4">
                         <a href="tel:+905414611984" class="w-10 h-10 rounded-lg bg-zinc-800 hover:bg-red-600 flex items-center justify-center text-zinc-400 hover:text-white transition-all"><i class="ti ti-phone text-lg"></i></a>
                         <a href="https://wa.me/905414611984" target="_blank" rel="nofollow noopener noreferrer" class="w-10 h-10 rounded-lg bg-zinc-800 hover:bg-green-600 flex items-center justify-center text-zinc-400 hover:text-white transition-all"><i class="ti ti-brand-whatsapp text-lg"></i></a>
+                        <a href="https://www.instagram.com/silivriguvennakliyat/" target="_blank" rel="nofollow noopener noreferrer" class="w-10 h-10 rounded-lg bg-zinc-800 hover:bg-pink-600 flex items-center justify-center text-zinc-400 hover:text-white transition-all"><i class="ti ti-brand-instagram text-lg"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100088395197422" target="_blank" rel="nofollow noopener noreferrer" class="w-10 h-10 rounded-lg bg-zinc-800 hover:bg-blue-600 flex items-center justify-center text-zinc-400 hover:text-white transition-all"><i class="ti ti-brand-facebook text-lg"></i></a>
                         <a href="mailto:info@silivriguvennakliyat.com" class="w-10 h-10 rounded-lg bg-zinc-800 hover:bg-red-600 flex items-center justify-center text-zinc-400 hover:text-white transition-all"><i class="ti ti-mail text-lg"></i></a>
                     </div>
                 </div>

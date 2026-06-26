@@ -1,18 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmetlerimiz | Silivri Güven Nakliyat</title>
-    <meta name="description" content="Silivri Güven Nakliyat hizmetleri: evden eve nakliyat, şehir içi-şehirler arası taşıma, ofis taşıma, ambalajlama, depolama, asansörlü nakliyat. 7/24 hizmet.">
-    <meta property="og:title" content="Hizmetlerimiz | Silivri Güven Nakliyat">
-    <meta property="og:description" content="Silivri'de profesyonel nakliyat ve taşımacılık hizmetleri.">
+    <title>Galeri | Silivri Güven Nakliyat</title>
+    <meta name="description" content="Silivri Güven Nakliyat galeri. Taşıma çalışmalarımızdan kareler. Profesyonel nakliyat hizmetimizi görün.">
+    <meta property="og:title" content="Galeri | Silivri Güven Nakliyat">
+    <meta property="og:description" content="Silivri Güven Nakliyat galeri. Taşıma çalışmalarımızdan kareler. Profesyonel nakliyat hizmetimizi görün.">
     <meta property="og:image" content="https://silivriguvennakliyat.com/assets/og-image.jpg">
-    <meta property="og:url" content="https://silivriguvennakliyat.com/hizmetler">
+    <meta property="og:url" content="https://silivriguvennakliyat.com/galeri">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="https://silivriguvennakliyat.com/galeri">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
     <meta name="theme-color" content="#dc2626">
-    <link rel="canonical" href="https://silivriguvennakliyat.com/hizmetler">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,18 +21,35 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        brand: { 50: '#fef2f2', 100: '#fee2e2', 200: '#fecaca', 300: '#fca5a5', 400: '#f87171', 500: '#ef4444', 600: '#dc2626', 700: '#b91c1c', 800: '#991b1b', 900: '#7f1d1d' }
+                    }
+                }
+            }
+        }
     </script>
+
     <style>
         html { scroll-behavior: smooth; }
+
         @media (prefers-reduced-motion: no-preference) {
             .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
             .reveal.revealed { opacity: 1; transform: translateY(0); }
             .reveal-d1 { transition-delay: 100ms; }
             .reveal-d2 { transition-delay: 200ms; }
             .reveal-d3 { transition-delay: 300ms; }
+            .reveal-d4 { transition-delay: 400ms; }
+            .reveal-d5 { transition-delay: 500ms; }
         }
-        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; } }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal { opacity: 1 !important; transform: none !important; }
+        }
+
         #mobileMenu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease; opacity: 0; }
         #mobileMenu.menu-open { max-height: 700px; opacity: 1; }
         #mobileMenu .mobile-link { opacity: 0; transform: translateX(-12px); transition: opacity 0.3s ease, transform 0.3s ease; }
@@ -47,6 +64,9 @@
         #mobileMenu.menu-open .mobile-link:nth-child(8) { transition-delay: 260ms; }
         #mobileMenu.menu-open .mobile-link:nth-child(9) { transition-delay: 290ms; }
         #mobileMenu.menu-open .mobile-link:nth-child(10) { transition-delay: 320ms; }
+        #mobileMenu.menu-open .mobile-link:nth-child(11) { transition-delay: 350ms; }
+
+        .teklif-input:focus { outline: none; border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220,38,38,0.1); }
     </style>
 
     <script type="application/ld+json">
@@ -55,14 +75,25 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://silivriguvennakliyat.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Hizmetler", "item": "https://silivriguvennakliyat.com/hizmetler" }
+            { "@type": "ListItem", "position": 2, "name": "Galeri", "item": "https://silivriguvennakliyat.com/galeri" }
         ]
     }
     </script>
+
+    <!-- Google Analytics placeholder -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
 </head>
 <body class="bg-white text-zinc-900 font-sans antialiased">
 
-    <!-- Top Bar -->
+    <!-- ============ TOP BAR ============ -->
     <div class="fixed top-0 left-0 right-0 z-50 bg-[#1a1f3c] border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-1.5 flex items-center justify-between">
             <span class="text-[11px] font-medium tracking-wide text-white/80 hidden sm:block">SİLİVRİ EVDEN EVE NAKLİYAT | GÜVEN NAKLİYAT</span>
@@ -75,23 +106,28 @@
         </div>
     </div>
 
-    <!-- Navigation -->
+    <!-- ============ NAVIGATION ============ -->
     <nav class="fixed top-[32px] left-0 right-0 z-40 bg-[#1a1f3c]/95 backdrop-blur-xl border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="/" class="flex items-center gap-2">
-                <div class="w-9 h-9 bg-red-600 rounded-lg flex items-center justify-center"><i class="ti ti-truck text-white text-lg"></i></div>
+                <div class="w-9 h-9 bg-red-600 rounded-lg flex items-center justify-center">
+                    <i class="ti ti-truck text-white text-lg"></i>
+                </div>
                 <span class="text-lg font-bold tracking-tight text-white">Güven <span class="text-red-500">Nakliyat</span></span>
             </a>
+
             <div class="hidden lg:flex items-center gap-5">
                 <a href="/" class="text-sm text-white/70 hover:text-white transition-colors">Ana Sayfa</a>
                 <div class="relative group">
-                    <a href="/hizmetler" class="text-sm text-red-400 font-medium transition-colors flex items-center gap-1">Hizmetler<i class="ti ti-chevron-down text-xs transition-transform group-hover:rotate-180"></i></a>
+                    <a href="/hizmetler" class="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-1">Hizmetler<i class="ti ti-chevron-down text-xs transition-transform group-hover:rotate-180"></i></a>
                     <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                         <div class="bg-white rounded-xl shadow-lg border border-zinc-100 py-2 w-56">
                             <a href="/silivri-evden-eve-nakliyat" class="block px-4 py-2.5 text-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition-colors">Evden Eve Nakliyat</a>
                             <a href="/silivri-sehir-ici-nakliyat" class="block px-4 py-2.5 text-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition-colors">Şehir İçi Nakliyat</a>
                             <a href="/silivri-sehirler-arasi-nakliyat" class="block px-4 py-2.5 text-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition-colors">Şehirler Arası Nakliyat</a>
                             <a href="/silivri-ofis-tasima" class="block px-4 py-2.5 text-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition-colors">Ofis Taşıma</a>
+                            <a href="/silivri-fabrika-tasimaciligi" class="block px-4 py-2.5 text-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition-colors">Fabrika Taşımacılığı</a>
+                            <a href="/silivri-parsiyel-nakliyat" class="block px-4 py-2.5 text-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition-colors">Parsiyel Nakliyat</a>
                             <a href="/silivri-ambalajlama-paketleme" class="block px-4 py-2.5 text-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition-colors">Ambalajlama</a>
                             <a href="/silivri-esya-depolama" class="block px-4 py-2.5 text-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition-colors">Eşya Depolama</a>
                             <a href="/silivri-asansorlu-nakliyat" class="block px-4 py-2.5 text-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition-colors">Asansörlü Nakliyat</a>
@@ -99,161 +135,103 @@
                     </div>
                 </div>
                 <a href="/hakkimizda" class="text-sm text-white/70 hover:text-white transition-colors">Hakkımızda</a>
-                <a href="/galeri" class="text-sm text-white/70 hover:text-white transition-colors">Galeri</a>
+                <a href="/galeri" class="text-sm text-red-400 font-medium transition-colors">Galeri</a>
                 <a href="/blog" class="text-sm text-white/70 hover:text-white transition-colors">Blog</a>
                 <a href="/sss" class="text-sm text-white/70 hover:text-white transition-colors">SSS</a>
                 <a href="/iletisim" class="text-sm text-white/70 hover:text-white transition-colors">İletişim</a>
                 <a href="/#teklif" class="text-sm font-medium text-white bg-red-600 hover:bg-red-700 px-5 py-2 rounded-lg transition-colors">Teklif Al</a>
-                <a href="tel:+905414611984" class="flex items-center gap-2 text-sm font-medium text-red-400 hover:text-red-300 transition-colors"><i class="ti ti-phone text-base"></i>0 541 461 19 84</a>
+                <a href="tel:+905414611984" class="flex items-center gap-2 text-sm font-medium text-red-400 hover:text-red-300 transition-colors">
+                    <i class="ti ti-phone text-base"></i>
+                    0 541 461 19 84
+                </a>
             </div>
-            <button id="menuBtn" class="lg:hidden p-2 text-white/70 hover:text-white transition-colors" aria-label="Menüyü aç"><i class="ti ti-menu-2 text-xl" id="menuIcon"></i></button>
+            <button id="menuBtn" class="lg:hidden p-2 text-white/70 hover:text-white transition-colors" aria-label="Menüyü aç">
+                <i class="ti ti-menu-2 text-xl" id="menuIcon"></i>
+            </button>
         </div>
+
         <div id="mobileMenu" class="lg:hidden bg-[#1a1f3c]/98 backdrop-blur-xl border-b border-white/10">
             <div class="px-6 py-5 flex flex-col gap-5">
                 <a href="/" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Ana Sayfa</a>
-                <a href="/hizmetler" class="text-sm text-red-400 font-medium transition-colors mobile-link">Hizmetler</a>
-                <a href="/silivri-evden-eve-nakliyat" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Evden Eve Nakliyat</a>
-                <a href="/silivri-sehir-ici-nakliyat" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Şehir İçi Nakliyat</a>
-                <a href="/silivri-sehirler-arasi-nakliyat" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Şehirler Arası Nakliyat</a>
-                <a href="/silivri-ofis-tasima" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Ofis Taşıma</a>
-                <a href="/silivri-asansorlu-nakliyat" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Asansörlü Nakliyat</a>
+                <a href="/hizmetler" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Hizmetler</a>
                 <a href="/hakkimizda" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Hakkımızda</a>
-                <a href="/galeri" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Galeri</a>
+                <a href="/galeri" class="text-sm text-red-400 font-medium transition-colors mobile-link">Galeri</a>
                 <a href="/blog" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Blog</a>
                 <a href="/sss" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">SSS</a>
+                <a href="/araclarimiz" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">Araçlarımız</a>
                 <a href="/iletisim" class="text-sm text-white/70 hover:text-white transition-colors mobile-link">İletişim</a>
                 <a href="/#teklif" class="text-sm font-medium text-white bg-red-600 px-5 py-2.5 rounded-lg text-center mobile-link">Teklif Al</a>
-                <a href="tel:+905414611984" class="flex items-center gap-2 text-sm font-medium text-red-400 mobile-link"><i class="ti ti-phone text-base"></i>0 541 461 19 84</a>
+                <a href="tel:+905414611984" class="flex items-center gap-2 text-sm font-medium text-red-400 mobile-link">
+                    <i class="ti ti-phone text-base"></i>
+                    0 541 461 19 84
+                </a>
             </div>
         </div>
     </nav>
 
     <main>
-        <!-- Hero -->
-        <section class="pt-32 pb-16 px-6 bg-zinc-50">
+
+        <!-- ============ HERO BANNER ============ -->
+        <section class="bg-[#1a1f3c] pt-36 pb-20 px-6">
             <div class="max-w-7xl mx-auto text-center">
-                <p class="text-[11px] uppercase tracking-[0.2em] text-red-600 font-medium mb-4 reveal">SİLİVRİ GÜVEN NAKLİYAT</p>
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-6 reveal">Hizmetlerimiz</h1>
-                <p class="text-lg text-zinc-500 max-w-2xl mx-auto reveal">Evden eve nakliyattan kurumsal taşımacılığa, ambalajlamadan depolamaya — tüm taşınma ihtiyaçlarınız için profesyonel çözümler.</p>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Galeri</h1>
+                <p class="text-white/70 text-lg">Taşıma Çalışmalarımızdan Kareler</p>
             </div>
         </section>
 
-        <!-- Services Grid -->
+        <!-- ============ GALLERY GRID ============ -->
         <section class="py-24 px-6">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                    <a href="/silivri-evden-eve-nakliyat" class="group bg-zinc-50 rounded-2xl p-8 hover:bg-zinc-100 transition-all border border-zinc-100 reveal block">
-                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-red-600/10 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all mb-6">
-                            <i class="ti ti-home-move text-2xl"></i>
-                        </div>
-                        <h2 class="text-xl font-semibold mb-3 group-hover:text-red-600 transition-colors">Evden Eve Nakliyat</h2>
-                        <p class="text-zinc-500 leading-relaxed mb-4">Eşyalarınız profesyonel ekibimiz tarafından özenle paketlenir, sigortalı olarak yeni adresinize taşınır. Demontaj ve montaj hizmeti dahildir.</p>
-                        <span class="text-sm font-medium text-red-600 flex items-center gap-1">Detaylı Bilgi <i class="ti ti-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i></span>
-                    </a>
-
-                    <a href="/silivri-sehir-ici-nakliyat" class="group bg-zinc-50 rounded-2xl p-8 hover:bg-zinc-100 transition-all border border-zinc-100 reveal reveal-d1 block">
-                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-red-600/10 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all mb-6">
-                            <i class="ti ti-building text-2xl"></i>
-                        </div>
-                        <h2 class="text-xl font-semibold mb-3 group-hover:text-red-600 transition-colors">Şehir İçi Nakliyat</h2>
-                        <p class="text-zinc-500 leading-relaxed mb-4">İstanbul ve Silivri içi hızlı, güvenli taşımacılık hizmeti. Aynı gün teslimat imkanı ile zaman kaybı yaşamazsınız.</p>
-                        <span class="text-sm font-medium text-red-600 flex items-center gap-1">Detaylı Bilgi <i class="ti ti-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i></span>
-                    </a>
-
-                    <a href="/silivri-sehirler-arasi-nakliyat" class="group bg-zinc-50 rounded-2xl p-8 hover:bg-zinc-100 transition-all border border-zinc-100 reveal reveal-d2 block">
-                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-red-600/10 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all mb-6">
-                            <i class="ti ti-map-2 text-2xl"></i>
-                        </div>
-                        <h2 class="text-xl font-semibold mb-3 group-hover:text-red-600 transition-colors">Şehirler Arası Nakliyat</h2>
-                        <p class="text-zinc-500 leading-relaxed mb-4">Türkiye'nin 81 iline güvenli ve hızlı şehirler arası nakliyat. Eşyalarınız sigorta kapsamında taşınır.</p>
-                        <span class="text-sm font-medium text-red-600 flex items-center gap-1">Detaylı Bilgi <i class="ti ti-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i></span>
-                    </a>
-
-                    <a href="/silivri-ofis-tasima" class="group bg-zinc-50 rounded-2xl p-8 hover:bg-zinc-100 transition-all border border-zinc-100 reveal block">
-                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-red-600/10 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all mb-6">
-                            <i class="ti ti-briefcase text-2xl"></i>
-                        </div>
-                        <h2 class="text-xl font-semibold mb-3 group-hover:text-red-600 transition-colors">Ofis & Kurumsal Taşıma</h2>
-                        <p class="text-zinc-500 leading-relaxed mb-4">İş yerinizi minimum iş kaybıyla taşıyoruz. Bilgisayar, dosya, mobilya — demontaj, taşıma ve montaj hizmeti.</p>
-                        <span class="text-sm font-medium text-red-600 flex items-center gap-1">Detaylı Bilgi <i class="ti ti-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i></span>
-                    </a>
-
-                    <a href="/silivri-ambalajlama-paketleme" class="group bg-zinc-50 rounded-2xl p-8 hover:bg-zinc-100 transition-all border border-zinc-100 reveal reveal-d1 block">
-                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-red-600/10 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all mb-6">
-                            <i class="ti ti-package text-2xl"></i>
-                        </div>
-                        <h2 class="text-xl font-semibold mb-3 group-hover:text-red-600 transition-colors">Ambalajlama & Paketleme</h2>
-                        <p class="text-zinc-500 leading-relaxed mb-4">Kırılacak eşya, elektronik ve değerli parçalar özel malzemelerle paketlenir. Balonlu naylon, köpük ve streç ile koruma.</p>
-                        <span class="text-sm font-medium text-red-600 flex items-center gap-1">Detaylı Bilgi <i class="ti ti-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i></span>
-                    </a>
-
-                    <a href="/silivri-esya-depolama" class="group bg-zinc-50 rounded-2xl p-8 hover:bg-zinc-100 transition-all border border-zinc-100 reveal reveal-d2 block">
-                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-red-600/10 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all mb-6">
-                            <i class="ti ti-building-warehouse text-2xl"></i>
-                        </div>
-                        <h2 class="text-xl font-semibold mb-3 group-hover:text-red-600 transition-colors">Eşya Depolama</h2>
-                        <p class="text-zinc-500 leading-relaxed mb-4">Güvenli, kuru ve temiz depolama alanlarında eşyalarınız kısa veya uzun süreli saklanır. 7/24 güvenlik.</p>
-                        <span class="text-sm font-medium text-red-600 flex items-center gap-1">Detaylı Bilgi <i class="ti ti-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i></span>
-                    </a>
-
-                    <a href="/silivri-asansorlu-nakliyat" class="group bg-zinc-50 rounded-2xl p-8 hover:bg-zinc-100 transition-all border border-zinc-100 reveal block md:col-span-2 lg:col-span-1">
-                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-red-600/10 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all mb-6">
-                            <i class="ti ti-crane text-2xl"></i>
-                        </div>
-                        <h2 class="text-xl font-semibold mb-3 group-hover:text-red-600 transition-colors">Asansörlü Nakliyat</h2>
-                        <p class="text-zinc-500 leading-relaxed mb-4">Dar merdivenli ve yüksek katlı binalarda dış cephe asansörü ile güvenli eşya indirme ve çıkarma hizmeti.</p>
-                        <span class="text-sm font-medium text-red-600 flex items-center gap-1">Detaylı Bilgi <i class="ti ti-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i></span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Us -->
-        <section class="py-24 px-6 bg-zinc-50">
-            <div class="max-w-7xl mx-auto text-center">
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tighter leading-none mb-16 reveal">Neden Güven Nakliyat?</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white rounded-2xl p-8 border border-zinc-100 reveal">
-                        <div class="w-14 h-14 mx-auto flex items-center justify-center rounded-xl bg-red-600/10 text-red-600 mb-5"><i class="ti ti-shield-check text-2xl"></i></div>
-                        <h3 class="font-semibold mb-2">Sigortalı Taşıma</h3>
-                        <p class="text-sm text-zinc-500">Tüm eşyalarınız taşıma süresince tam sigorta kapsamındadır.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="rounded-2xl overflow-hidden bg-zinc-100 reveal cursor-pointer" onclick="openLightbox('assets/galeri-1.jpg')">
+                        <img src="assets/galeri-1.jpg" alt="Güven Nakliyat taşıma çalışması 1" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
                     </div>
-                    <div class="bg-white rounded-2xl p-8 border border-zinc-100 reveal reveal-d1">
-                        <div class="w-14 h-14 mx-auto flex items-center justify-center rounded-xl bg-red-600/10 text-red-600 mb-5"><i class="ti ti-clock-24 text-2xl"></i></div>
-                        <h3 class="font-semibold mb-2">7/24 Hizmet</h3>
-                        <p class="text-sm text-zinc-500">Hafta sonu ve resmi tatiller dahil her zaman yanınızdayız.</p>
+                    <div class="rounded-2xl overflow-hidden bg-zinc-100 reveal reveal-d1 cursor-pointer" onclick="openLightbox('assets/galeri-2.jpg')">
+                        <img src="assets/galeri-2.jpg" alt="Güven Nakliyat taşıma çalışması 2" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
                     </div>
-                    <div class="bg-white rounded-2xl p-8 border border-zinc-100 reveal reveal-d2">
-                        <div class="w-14 h-14 mx-auto flex items-center justify-center rounded-xl bg-red-600/10 text-red-600 mb-5"><i class="ti ti-currency-lira text-2xl"></i></div>
-                        <h3 class="font-semibold mb-2">Uygun Fiyat</h3>
-                        <p class="text-sm text-zinc-500">Şeffaf fiyatlandırma, gizli maliyet yok. Ücretsiz keşif ve teklif.</p>
+                    <div class="rounded-2xl overflow-hidden bg-zinc-100 reveal reveal-d2 cursor-pointer" onclick="openLightbox('assets/galeri-3.jpg')">
+                        <img src="assets/galeri-3.jpg" alt="Güven Nakliyat taşıma çalışması 3" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
                     </div>
-                    <div class="bg-white rounded-2xl p-8 border border-zinc-100 reveal reveal-d3">
-                        <div class="w-14 h-14 mx-auto flex items-center justify-center rounded-xl bg-red-600/10 text-red-600 mb-5"><i class="ti ti-users text-2xl"></i></div>
-                        <h3 class="font-semibold mb-2">Uzman Ekip</h3>
-                        <p class="text-sm text-zinc-500">Deneyimli ve eğitimli personelimizle profesyonel hizmet.</p>
+                    <div class="rounded-2xl overflow-hidden bg-zinc-100 reveal cursor-pointer" onclick="openLightbox('assets/galeri-4.jpg')">
+                        <img src="assets/galeri-4.jpg" alt="Güven Nakliyat taşıma çalışması 4" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden bg-zinc-100 reveal reveal-d1 cursor-pointer" onclick="openLightbox('assets/galeri-5.jpg')">
+                        <img src="assets/galeri-5.jpg" alt="Güven Nakliyat taşıma çalışması 5" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden bg-zinc-100 reveal reveal-d2 cursor-pointer" onclick="openLightbox('assets/galeri-6.jpg')">
+                        <img src="assets/galeri-6.jpg" alt="Güven Nakliyat taşıma çalışması 6" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden bg-zinc-100 reveal cursor-pointer" onclick="openLightbox('assets/galeri-7.jpg')">
+                        <img src="assets/galeri-7.jpg" alt="Güven Nakliyat taşıma çalışması 7" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden bg-zinc-100 reveal reveal-d1 cursor-pointer" onclick="openLightbox('assets/galeri-8.jpg')">
+                        <img src="assets/galeri-8.jpg" alt="Güven Nakliyat taşıma çalışması 8" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden bg-zinc-100 reveal reveal-d2 cursor-pointer" onclick="openLightbox('assets/galeri-9.jpg')">
+                        <img src="assets/galeri-9.jpg" alt="Güven Nakliyat taşıma çalışması 9" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden bg-zinc-100 reveal cursor-pointer" onclick="openLightbox('assets/galeri-10.jpg')">
+                        <img src="assets/galeri-10.jpg" alt="Güven Nakliyat taşıma çalışması 10" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden bg-zinc-100 reveal reveal-d1 cursor-pointer" onclick="openLightbox('assets/galeri-11.jpg')">
+                        <img src="assets/galeri-11.jpg" alt="Güven Nakliyat taşıma çalışması 11" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden bg-zinc-100 reveal reveal-d2 cursor-pointer" onclick="openLightbox('assets/galeri-12.jpg')">
+                        <img src="assets/galeri-12.jpg" alt="Güven Nakliyat taşıma çalışması 12" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA -->
-        <section class="py-24 px-6">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold tracking-tighter mb-6 reveal">Ücretsiz Teklif Alın</h2>
-                <p class="text-zinc-500 mb-10 reveal">Taşınma planınızı bizimle paylaşın, size en uygun teklifi sunalım.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
-                    <a href="tel:+905414611984" class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-red-600 text-white font-bold text-lg rounded-xl hover:bg-red-700 active:scale-[0.98] transition-all shadow-lg shadow-red-600/20">
-                        <i class="ti ti-phone text-xl"></i>Hemen Ara
-                    </a>
-                    <a href="https://wa.me/905414611984?text=Merhaba%2C%20nakliyat%20teklifi%20almak%20istiyorum." target="_blank" rel="nofollow noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-600 text-white font-medium rounded-xl hover:bg-green-700 active:scale-[0.98] transition-all">
-                        <i class="ti ti-brand-whatsapp text-xl"></i>WhatsApp ile Ulaşın
-                    </a>
-                </div>
-            </div>
-        </section>
     </main>
+
+    <!-- ============ LIGHTBOX MODAL ============ -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden items-center justify-center p-4" onclick="closeLightbox(event)">
+        <button onclick="closeLightbox(event)" class="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-10">
+            <i class="ti ti-x text-3xl"></i>
+        </button>
+        <img id="lightboxImg" src="" alt="Galeri görseli" class="max-w-full max-h-[90vh] rounded-2xl object-contain">
+    </div>
 
     <!-- Footer CTA Bar -->
     <section class="bg-gradient-to-r from-red-700 to-red-600 py-12 px-6">
@@ -267,7 +245,7 @@
                 <a href="https://wa.me/905414611984" target="_blank" rel="nofollow noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 active:scale-[0.98] transition-all">
                     <i class="ti ti-brand-whatsapp text-lg"></i>WhatsApp
                 </a>
-                <a href="#teklif" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 border-2 border-white/40 text-white font-medium rounded-xl hover:bg-white/10 active:scale-[0.98] transition-all">
+                <a href="/#teklif" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 border-2 border-white/40 text-white font-medium rounded-xl hover:bg-white/10 active:scale-[0.98] transition-all">
                     <i class="ti ti-file-text text-lg"></i>Online Teklif
                 </a>
             </div>
@@ -287,7 +265,7 @@
                         <span class="text-lg font-bold text-white">Güven <span class="text-red-500">Nakliyat</span></span>
                     </div>
                     <p class="text-zinc-400 text-sm leading-relaxed mb-6 max-w-xs">Silivri merkezli olarak tüm Türkiye'ye güvenilir, sigortalı nakliyat hizmeti sunuyoruz. 7/24 yanınızdayız.</p>
-                    <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-3">
                         <a href="tel:+905414611984" class="w-10 h-10 rounded-lg bg-zinc-800 hover:bg-red-600 flex items-center justify-center text-zinc-400 hover:text-white transition-all"><i class="ti ti-phone text-lg"></i></a>
                         <a href="https://wa.me/905414611984" target="_blank" rel="nofollow noopener noreferrer" class="w-10 h-10 rounded-lg bg-zinc-800 hover:bg-green-600 flex items-center justify-center text-zinc-400 hover:text-white transition-all"><i class="ti ti-brand-whatsapp text-lg"></i></a>
                         <a href="https://www.instagram.com/silivriguvennakliyat/" target="_blank" rel="nofollow noopener noreferrer" class="w-10 h-10 rounded-lg bg-zinc-800 hover:bg-pink-600 flex items-center justify-center text-zinc-400 hover:text-white transition-all"><i class="ti ti-brand-instagram text-lg"></i></a>
@@ -360,14 +338,65 @@
 
     <script>
         (function() {
-            var menuBtn = document.getElementById('menuBtn'), mobileMenu = document.getElementById('mobileMenu'), menuIcon = document.getElementById('menuIcon');
-            menuBtn.addEventListener('click', function() { var o = mobileMenu.classList.contains('menu-open'); mobileMenu.classList.toggle('menu-open'); menuIcon.className = o ? 'ti ti-menu-2 text-xl' : 'ti ti-x text-xl'; });
-            document.querySelectorAll('.mobile-link').forEach(function(l) { l.addEventListener('click', function() { mobileMenu.classList.remove('menu-open'); menuIcon.className = 'ti ti-menu-2 text-xl'; }); });
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                var obs = new IntersectionObserver(function(e) { e.forEach(function(en) { if (en.isIntersecting) { en.target.classList.add('revealed'); obs.unobserve(en.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-                document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+            // Mobile menu
+            var menuBtn = document.getElementById('menuBtn');
+            var mobileMenu = document.getElementById('mobileMenu');
+            var menuIcon = document.getElementById('menuIcon');
+
+            menuBtn.addEventListener('click', function() {
+                var isOpen = mobileMenu.classList.contains('menu-open');
+                if (isOpen) {
+                    mobileMenu.classList.remove('menu-open');
+                    menuIcon.className = 'ti ti-menu-2 text-xl';
+                } else {
+                    mobileMenu.classList.add('menu-open');
+                    menuIcon.className = 'ti ti-x text-xl';
+                }
+            });
+
+            var mobileLinks = document.querySelectorAll('.mobile-link');
+            for (var i = 0; i < mobileLinks.length; i++) {
+                mobileLinks[i].addEventListener('click', function() {
+                    mobileMenu.classList.remove('menu-open');
+                    menuIcon.className = 'ti ti-menu-2 text-xl';
+                });
+            }
+
+            // ===== SCROLL REVEAL =====
+            var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!prefersReducedMotion) {
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+                var revealEls = document.querySelectorAll('.reveal');
+                for (var j = 0; j < revealEls.length; j++) {
+                    observer.observe(revealEls[j]);
+                }
             }
         })();
+
+        // ===== LIGHTBOX =====
+        function openLightbox(src) {
+            var lb = document.getElementById('lightbox');
+            document.getElementById('lightboxImg').src = src;
+            lb.classList.remove('hidden');
+            lb.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox(e) {
+            if (e.target.id === 'lightbox' || e.target.closest('button') || e.target.classList.contains('ti-x')) {
+                var lb = document.getElementById('lightbox');
+                lb.classList.add('hidden');
+                lb.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        }
     </script>
 </body>
 </html>
