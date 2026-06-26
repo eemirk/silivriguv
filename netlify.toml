@@ -23,6 +23,11 @@
   status = 200
 
 [[redirects]]
+  from = "/silivri-parsiyel-nakliyat"
+  to = "/silivri-parsiyel-nakliyat.html"
+  status = 200
+
+[[redirects]]
   from = "/silivri-ambalajlama-paketleme"
   to = "/silivri-ambalajlama-paketleme.html"
   status = 200
