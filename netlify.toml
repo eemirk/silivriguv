@@ -38,6 +38,11 @@
   status = 200
 
 [[redirects]]
+  from = "/araclarimiz"
+  to = "/araclarimiz.html"
+  status = 200
+
+[[redirects]]
   from = "/hizmetler"
   to = "/hizmetler.html"
   status = 200

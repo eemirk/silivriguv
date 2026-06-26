@@ -17,7 +17,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,7 +25,7 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Outfit', 'system-ui', 'sans-serif'] },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] },
                     colors: {
                         brand: { 50: '#fef2f2', 100: '#fee2e2', 200: '#fecaca', 300: '#fca5a5', 400: '#f87171', 500: '#ef4444', 600: '#dc2626', 700: '#b91c1c', 800: '#991b1b', 900: '#7f1d1d' }
                     }
@@ -188,6 +188,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="/araclarimiz" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">Araçlarımız</a>
                 <a href="/iletisim" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">İletişim</a>
                 <a href="#teklif" class="text-sm font-medium text-white bg-red-600 hover:bg-red-700 px-5 py-2 rounded-lg transition-colors">Teklif Al</a>
                 <a href="tel:+905414611984" class="flex items-center gap-2 text-sm font-medium text-red-600 hover:text-red-700 transition-colors">
@@ -209,6 +210,7 @@
                 <a href="/silivri-sehirler-arasi-nakliyat" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors mobile-link">Şehirler Arası Nakliyat</a>
                 <a href="/silivri-ofis-tasima" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors mobile-link">Ofis Taşıma</a>
                 <a href="/silivri-asansorlu-nakliyat" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors mobile-link">Asansörlü Nakliyat</a>
+                <a href="/araclarimiz" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors mobile-link">Araçlarımız</a>
                 <a href="/iletisim" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors mobile-link">İletişim</a>
                 <a href="#teklif" class="text-sm font-medium text-white bg-red-600 px-5 py-2.5 rounded-lg text-center mobile-link">Teklif Al</a>
                 <a href="tel:+905414611984" class="flex items-center gap-2 text-sm font-medium text-red-600 mobile-link">
@@ -368,8 +370,8 @@
                         <rect x="10" y="20" width="200" height="3" rx="1" fill="#ef4444" opacity="0.5"/>
                         <rect x="10" y="117" width="200" height="3" rx="1" fill="#ef4444" opacity="0.5"/>
                         <!-- Text on truck -->
-                        <text x="110" y="62" text-anchor="middle" fill="white" font-family="Outfit, sans-serif" font-size="22" font-weight="700" letter-spacing="2">GÜVEN</text>
-                        <text x="110" y="88" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="Outfit, sans-serif" font-size="14" font-weight="400" letter-spacing="4">NAKLİYAT</text>
+                        <text x="110" y="62" text-anchor="middle" fill="white" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="700" letter-spacing="2">GÜVEN</text>
+                        <text x="110" y="88" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="400" letter-spacing="4">NAKLİYAT</text>
                         <!-- Cargo door lines -->
                         <line x1="110" y1="100" x2="110" y2="130" stroke="#b91c1c" stroke-width="1.5"/>
                         <circle cx="106" cy="115" r="2.5" fill="#991b1b"/>
@@ -656,37 +658,39 @@
                 </h2>
                 <p class="text-zinc-500 mb-12 reveal">Formu doldurun, size en kısa sürede dönüş yapalım.</p>
 
-                <form id="quoteForm" class="space-y-6 reveal" onsubmit="return false;">
+                <form id="quoteForm" name="teklif" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6 reveal">
+                    <input type="hidden" name="form-name" value="teklif">
+                    <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-zinc-700 mb-2">Ad Soyad *</label>
-                            <input type="text" required class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all" placeholder="Adınız Soyadınız">
+                            <input type="text" name="ad-soyad" required class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all" placeholder="Adınız Soyadınız">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-zinc-700 mb-2">Telefon *</label>
-                            <input type="tel" required class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all" placeholder="05XX XXX XX XX">
+                            <input type="tel" name="telefon" required class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all" placeholder="05XX XXX XX XX">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-zinc-700 mb-2">Nereden (Şehir / İlçe) *</label>
-                            <input type="text" required class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all" placeholder="Ör: Silivri, İstanbul">
+                            <input type="text" name="nereden" required class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all" placeholder="Ör: Silivri, İstanbul">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-zinc-700 mb-2">Nereye (Şehir / İlçe) *</label>
-                            <input type="text" required class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all" placeholder="Ör: Ankara, Çankaya">
+                            <input type="text" name="nereye" required class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all" placeholder="Ör: Ankara, Çankaya">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-zinc-700 mb-2">Taşınma Tarihi</label>
-                            <input type="date" class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all">
+                            <input type="date" name="tarih" class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-zinc-700 mb-2">Oda Sayısı</label>
-                            <select class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all">
+                            <select name="oda-sayisi" class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all">
                                 <option value="">Seçiniz</option>
                                 <option>1+0</option>
                                 <option>1+1</option>
@@ -699,7 +703,7 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-zinc-700 mb-2">Hizmet Türü</label>
-                            <select class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all">
+                            <select name="hizmet-turu" class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all">
                                 <option value="">Seçiniz</option>
                                 <option>Evden Eve Nakliyat</option>
                                 <option>Şehir İçi Nakliyat</option>
@@ -713,7 +717,7 @@
 
                     <div>
                         <label class="block text-sm font-medium text-zinc-700 mb-2">Ek Notlar</label>
-                        <textarea rows="4" class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all resize-none" placeholder="Taşınma ile ilgili eklemek istedikleriniz..."></textarea>
+                        <textarea name="notlar" rows="4" class="teklif-input w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 transition-all resize-none" placeholder="Taşınma ile ilgili eklemek istedikleriniz..."></textarea>
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4">
@@ -721,7 +725,7 @@
                             <i class="ti ti-send text-xl"></i>
                             Teklif İste
                         </button>
-                        <a href="https://wa.me/905414611984?text=Merhaba%2C%20nakliyat%20teklifi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-600 text-white font-medium rounded-xl hover:bg-green-700 active:scale-[0.98] transition-all">
+                        <a href="https://wa.me/905414611984?text=Merhaba%2C%20nakliyat%20teklifi%20almak%20istiyorum." target="_blank" rel="nofollow noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-600 text-white font-medium rounded-xl hover:bg-green-700 active:scale-[0.98] transition-all">
                             <i class="ti ti-brand-whatsapp text-xl"></i>
                             WhatsApp ile Teklif Al
                         </a>
@@ -886,14 +890,14 @@
                             </div>
                             <div>
                                 <p class="text-sm text-zinc-400 mb-1">WhatsApp</p>
-                                <a href="https://wa.me/905414611984" target="_blank" rel="noopener noreferrer" class="text-zinc-700 hover:text-red-600 transition-colors">0 541 461 19 84</a>
+                                <a href="https://wa.me/905414611984" target="_blank" rel="nofollow noopener noreferrer" class="text-zinc-700 hover:text-red-600 transition-colors">0 541 461 19 84</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="rounded-2xl overflow-hidden bg-zinc-200 min-h-[360px] reveal reveal-d1">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015!2d28.246!3d41.073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSilivri!5e0!3m2!1str!2str"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3012!2d28.2477677!3d41.0883138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b53fa6a4b86bc5%3A0x529376d1dec95947!2sSilivri%20G%C3%BCven%20Nakliyat!5e0!3m2!1str!2str"
                             class="w-full h-full min-h-[360px]"
                             style="border:0;"
                             allowfullscreen=""
@@ -908,73 +912,106 @@
 
     </main>
 
+    <!-- Footer CTA Bar -->
+    <section class="bg-gradient-to-r from-red-700 to-red-600 py-12 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Taşınma Planınız Mı Var?</h2>
+            <p class="text-red-100 mb-8">Ücretsiz keşif ve teklif için hemen bize ulaşın. 7/24 hizmetinizdeyiz.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+905414611984" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white text-red-600 font-bold rounded-xl hover:bg-red-50 active:scale-[0.98] transition-all">
+                    <i class="ti ti-phone text-lg"></i>0 541 461 19 84
+                </a>
+                <a href="https://wa.me/905414611984" target="_blank" rel="nofollow noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 active:scale-[0.98] transition-all">
+                    <i class="ti ti-brand-whatsapp text-lg"></i>WhatsApp
+                </a>
+                <a href="#teklif" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 border-2 border-white/40 text-white font-medium rounded-xl hover:bg-white/10 active:scale-[0.98] transition-all">
+                    <i class="ti ti-file-text text-lg"></i>Online Teklif
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-zinc-900 text-zinc-300 pt-16 pb-6 px-6">
+    <footer class="bg-zinc-950 text-zinc-300 pt-16 pb-6 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
-                            <i class="ti ti-truck text-white text-sm"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-5">
+                        <div class="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center">
+                            <i class="ti ti-truck text-white text-lg"></i>
                         </div>
-                        <span class="text-base font-bold text-white">Güven Nakliyat</span>
+                        <span class="text-lg font-bold text-white">Güven <span class="text-red-500">Nakliyat</span></span>
                     </div>
-                    <p class="text-zinc-400 text-sm leading-relaxed">Silivri merkezli olarak tüm Türkiye'ye güvenilir nakliyat hizmeti sunuyoruz. Eşyalarınız bizimle güvende.</p>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-6 max-w-xs">Silivri merkezli olarak tüm Türkiye'ye güvenilir, sigortalı nakliyat hizmeti sunuyoruz. 7/24 yanınızdayız.</p>
+                    <div class="flex items-center gap-4">
+                        <a href="tel:+905414611984" class="w-10 h-10 rounded-lg bg-zinc-800 hover:bg-red-600 flex items-center justify-center text-zinc-400 hover:text-white transition-all"><i class="ti ti-phone text-lg"></i></a>
+                        <a href="https://wa.me/905414611984" target="_blank" rel="nofollow noopener noreferrer" class="w-10 h-10 rounded-lg bg-zinc-800 hover:bg-green-600 flex items-center justify-center text-zinc-400 hover:text-white transition-all"><i class="ti ti-brand-whatsapp text-lg"></i></a>
+                        <a href="mailto:info@silivriguvennakliyat.com" class="w-10 h-10 rounded-lg bg-zinc-800 hover:bg-red-600 flex items-center justify-center text-zinc-400 hover:text-white transition-all"><i class="ti ti-mail text-lg"></i></a>
+                    </div>
                 </div>
+
+                <!-- Hizmetler -->
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Hizmetlerimiz</h4>
-                    <ul class="space-y-2 text-sm">
+                    <h4 class="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Hizmetlerimiz</h4>
+                    <ul class="space-y-3 text-sm">
                         <li><a href="/silivri-evden-eve-nakliyat" class="text-zinc-400 hover:text-red-400 transition-colors">Evden Eve Nakliyat</a></li>
                         <li><a href="/silivri-sehir-ici-nakliyat" class="text-zinc-400 hover:text-red-400 transition-colors">Şehir İçi Nakliyat</a></li>
                         <li><a href="/silivri-sehirler-arasi-nakliyat" class="text-zinc-400 hover:text-red-400 transition-colors">Şehirler Arası Nakliyat</a></li>
                         <li><a href="/silivri-ofis-tasima" class="text-zinc-400 hover:text-red-400 transition-colors">Ofis Taşıma</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Diğer Hizmetler</h4>
-                    <ul class="space-y-2 text-sm">
                         <li><a href="/silivri-ambalajlama-paketleme" class="text-zinc-400 hover:text-red-400 transition-colors">Ambalajlama</a></li>
                         <li><a href="/silivri-esya-depolama" class="text-zinc-400 hover:text-red-400 transition-colors">Eşya Depolama</a></li>
                         <li><a href="/silivri-asansorlu-nakliyat" class="text-zinc-400 hover:text-red-400 transition-colors">Asansörlü Nakliyat</a></li>
-                        <li><a href="/hizmetler" class="text-zinc-400 hover:text-red-400 transition-colors">Tüm Hizmetler</a></li>
                     </ul>
                 </div>
+
+                <!-- Hizmet Bölgeleri -->
                 <div>
-                    <h4 class="text-white font-semibold mb-4">İletişim</h4>
+                    <h4 class="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Hizmet Bölgeleri</h4>
                     <ul class="space-y-3 text-sm">
-                        <li class="flex items-start gap-2"><i class="ti ti-map-pin text-red-500 mt-0.5"></i><span class="text-zinc-400">Silivri, İstanbul</span></li>
-                        <li class="flex items-center gap-2"><i class="ti ti-phone text-red-500"></i><a href="tel:+905414611984" class="text-zinc-400 hover:text-red-400 transition-colors">0 541 461 19 84</a></li>
-                        <li class="flex items-center gap-2"><i class="ti ti-mail text-red-500"></i><a href="mailto:info@silivriguvennakliyat.com" class="text-zinc-400 hover:text-red-400 transition-colors">info@silivriguvennakliyat.com</a></li>
-                        <li class="flex items-center gap-2"><i class="ti ti-brand-whatsapp text-red-500"></i><a href="https://wa.me/905414611984" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-red-400 transition-colors">WhatsApp</a></li>
+                        <li class="text-zinc-400">Silivri</li>
+                        <li class="text-zinc-400">Çatalca</li>
+                        <li class="text-zinc-400">Büyükçekmece</li>
+                        <li class="text-zinc-400">Beylikdüzü</li>
+                        <li class="text-zinc-400">Esenyurt</li>
+                        <li class="text-zinc-400">İstanbul Geneli</li>
+                        <li class="text-zinc-400">Türkiye Geneli</li>
+                    </ul>
+                </div>
+
+                <!-- İletişim -->
+                <div>
+                    <h4 class="text-white font-semibold mb-5 text-sm uppercase tracking-wider">İletişim</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3"><i class="ti ti-map-pin text-red-500 mt-0.5"></i><span class="text-zinc-400">Mimar Sinan, Alp Sk., 34570 Silivri/İstanbul</span></li>
+                        <li class="flex items-center gap-3"><i class="ti ti-phone text-red-500"></i><a href="tel:+905414611984" class="text-zinc-400 hover:text-red-400 transition-colors">0 541 461 19 84</a></li>
+                        <li class="flex items-center gap-3"><i class="ti ti-mail text-red-500"></i><a href="mailto:info@silivriguvennakliyat.com" class="text-zinc-400 hover:text-red-400 transition-colors">info@silivriguvennakliyat.com</a></li>
+                        <li class="flex items-center gap-3"><i class="ti ti-clock text-red-500"></i><span class="text-zinc-400">7/24 Hizmet</span></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-zinc-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-zinc-800/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
                 <p class="text-zinc-500 text-sm">&copy; 2026 Silivri Güven Nakliyat. Tüm hakları saklıdır.</p>
-                <a href="https://ekeymedya.com" target="_blank" rel="noopener noreferrer" class="text-zinc-500 text-sm hover:text-red-400 transition-colors">EKEY MEDYA tarafından yapıldı</a>
+                <div class="flex items-center gap-6 text-sm">
+                    <a href="/hizmetler" class="text-zinc-500 hover:text-red-400 transition-colors">Hizmetler</a>
+                    <a href="/iletisim" class="text-zinc-500 hover:text-red-400 transition-colors">İletişim</a>
+                    <a href="https://ekeymedya.com" target="_blank" rel="nofollow noopener noreferrer" class="text-zinc-500 hover:text-red-400 transition-colors">EKEY MEDYA</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
-    <a
-        href="https://wa.me/905414611984"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/25 hover:bg-green-600 active:scale-[0.95] transition-all"
-        aria-label="WhatsApp ile iletişim"
-    >
-        <i class="ti ti-brand-whatsapp text-2xl text-white"></i>
-    </a>
-
-    <!-- Phone Float (mobile) -->
-    <a
-        href="tel:+905414611984"
-        class="fixed bottom-6 left-6 z-50 w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-600/25 hover:bg-red-700 active:scale-[0.95] transition-all lg:hidden"
-        aria-label="Hemen Ara"
-    >
-        <i class="ti ti-phone text-2xl text-white"></i>
-    </a>
+    <!-- Float Buttons -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a href="tel:+905414611984" class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-600/25 hover:bg-red-700 active:scale-[0.95] transition-all" aria-label="Hemen Ara">
+            <i class="ti ti-phone text-2xl text-white"></i>
+        </a>
+        <a href="https://wa.me/905414611984" target="_blank" rel="nofollow noopener noreferrer" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/25 hover:bg-green-600 active:scale-[0.95] transition-all" aria-label="WhatsApp ile iletişim">
+            <i class="ti ti-brand-whatsapp text-2xl text-white"></i>
+        </a>
+    </div>
 
     <script>
         (function() {
