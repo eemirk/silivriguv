@@ -1,0 +1,54 @@
+[build]
+  publish = "."
+
+# Pretty URLs - .html olmadan erişim
+[[redirects]]
+  from = "/silivri-evden-eve-nakliyat"
+  to = "/silivri-evden-eve-nakliyat.html"
+  status = 200
+
+[[redirects]]
+  from = "/silivri-sehir-ici-nakliyat"
+  to = "/silivri-sehir-ici-nakliyat.html"
+  status = 200
+
+[[redirects]]
+  from = "/silivri-sehirler-arasi-nakliyat"
+  to = "/silivri-sehirler-arasi-nakliyat.html"
+  status = 200
+
+[[redirects]]
+  from = "/silivri-ofis-tasima"
+  to = "/silivri-ofis-tasima.html"
+  status = 200
+
+[[redirects]]
+  from = "/silivri-ambalajlama-paketleme"
+  to = "/silivri-ambalajlama-paketleme.html"
+  status = 200
+
+[[redirects]]
+  from = "/silivri-esya-depolama"
+  to = "/silivri-esya-depolama.html"
+  status = 200
+
+[[redirects]]
+  from = "/silivri-asansorlu-nakliyat"
+  to = "/silivri-asansorlu-nakliyat.html"
+  status = 200
+
+[[redirects]]
+  from = "/hizmetler"
+  to = "/hizmetler.html"
+  status = 200
+
+[[redirects]]
+  from = "/iletisim"
+  to = "/iletisim.html"
+  status = 200
+
+# Headers for performance
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
