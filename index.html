@@ -67,10 +67,6 @@
         #mobileMenu.menu-open .mobile-link:nth-child(10) { transition-delay: 320ms; }
         #mobileMenu.menu-open .mobile-link:nth-child(11) { transition-delay: 350ms; }
 
-        #truckScene { display: block; }
-
-        .wheel-spin { transform-origin: center; }
-
         .teklif-input:focus { outline: none; border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220,38,38,0.1); }
     </style>
 
@@ -223,272 +219,36 @@
 
     <main>
 
-        <!-- ============ HERO - 2D Truck Animation ============ -->
-        <section id="heroAnimation" class="relative" style="height: 300vh;">
-            <div class="sticky top-0 h-[100dvh] w-full overflow-hidden">
-                <!-- SVG Animated Scene -->
-                <svg id="truckScene" viewBox="0 0 1920 1080" class="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-                    <defs>
-                        <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:#bae6fd"/>
-                            <stop offset="60%" style="stop-color:#e0f2fe"/>
-                            <stop offset="100%" style="stop-color:#f0f9ff"/>
-                        </linearGradient>
-                        <linearGradient id="roadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:#374151"/>
-                            <stop offset="100%" style="stop-color:#1f2937"/>
-                        </linearGradient>
-                        <linearGradient id="grassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:#86efac"/>
-                            <stop offset="100%" style="stop-color:#4ade80"/>
-                        </linearGradient>
-                    </defs>
-
-                    <!-- Sky -->
-                    <rect width="1920" height="1080" fill="url(#skyGrad)"/>
-
-                    <!-- Sun -->
-                    <circle cx="1600" cy="180" r="80" fill="#fbbf24" opacity="0.3"/>
-                    <circle cx="1600" cy="180" r="50" fill="#fbbf24" opacity="0.5"/>
-
-                    <!-- Clouds -->
-                    <g id="cloudsGroup">
-                        <g class="cloud" data-speed="0.3">
-                            <ellipse cx="300" cy="150" rx="90" ry="30" fill="white" opacity="0.9"/>
-                            <ellipse cx="350" cy="138" rx="65" ry="25" fill="white" opacity="0.9"/>
-                            <ellipse cx="260" cy="145" rx="55" ry="22" fill="white" opacity="0.7"/>
-                        </g>
-                        <g class="cloud" data-speed="0.2">
-                            <ellipse cx="800" cy="100" rx="100" ry="32" fill="white" opacity="0.8"/>
-                            <ellipse cx="860" cy="88" rx="70" ry="28" fill="white" opacity="0.8"/>
-                            <ellipse cx="740" cy="96" rx="60" ry="24" fill="white" opacity="0.6"/>
-                        </g>
-                        <g class="cloud" data-speed="0.4">
-                            <ellipse cx="1400" cy="120" rx="80" ry="28" fill="white" opacity="0.7"/>
-                            <ellipse cx="1450" cy="110" rx="60" ry="22" fill="white" opacity="0.7"/>
-                        </g>
-                    </g>
-
-                    <!-- Far Mountains/Hills -->
-                    <path d="M0,580 Q200,480 400,560 Q600,500 800,550 Q1000,470 1200,540 Q1400,490 1600,530 Q1800,480 1920,550 L1920,650 L0,650 Z" fill="#cbd5e1" opacity="0.5"/>
-
-                    <!-- Far Buildings -->
-                    <g id="farBuildings" opacity="0.6">
-                        <rect x="150" y="480" width="40" height="150" fill="#94a3b8" rx="2"/>
-                        <rect x="200" y="440" width="55" height="190" fill="#9ca3af" rx="2"/>
-                        <rect x="265" y="500" width="35" height="130" fill="#a1a1aa" rx="2"/>
-                        <rect x="450" y="460" width="50" height="170" fill="#94a3b8" rx="2"/>
-                        <rect x="510" y="490" width="40" height="140" fill="#9ca3af" rx="2"/>
-                        <rect x="700" y="430" width="60" height="200" fill="#94a3b8" rx="2"/>
-                        <rect x="770" y="470" width="45" height="160" fill="#a1a1aa" rx="2"/>
-                        <rect x="1000" y="450" width="55" height="180" fill="#94a3b8" rx="2"/>
-                        <rect x="1065" y="490" width="40" height="140" fill="#9ca3af" rx="2"/>
-                        <rect x="1250" y="440" width="50" height="190" fill="#94a3b8" rx="2"/>
-                        <rect x="1310" y="480" width="45" height="150" fill="#a1a1aa" rx="2"/>
-                        <rect x="1500" y="460" width="60" height="170" fill="#9ca3af" rx="2"/>
-                        <rect x="1570" y="500" width="35" height="130" fill="#94a3b8" rx="2"/>
-                        <rect x="1700" y="450" width="50" height="180" fill="#a1a1aa" rx="2"/>
-                    </g>
-
-                    <!-- Near Buildings -->
-                    <g id="nearBuildings">
-                        <rect x="80" y="430" width="70" height="230" fill="#64748b" rx="3"/>
-                        <rect x="82" y="445" width="14" height="18" rx="2" fill="#fef3c7" opacity="0.7"/>
-                        <rect x="102" y="445" width="14" height="18" rx="2" fill="#bfdbfe" opacity="0.7"/>
-                        <rect x="122" y="445" width="14" height="18" rx="2" fill="#fef3c7" opacity="0.7"/>
-                        <rect x="82" y="475" width="14" height="18" rx="2" fill="#bfdbfe" opacity="0.7"/>
-                        <rect x="102" y="475" width="14" height="18" rx="2" fill="#fef3c7" opacity="0.7"/>
-                        <rect x="122" y="475" width="14" height="18" rx="2" fill="#bfdbfe" opacity="0.7"/>
-
-                        <rect x="180" y="380" width="90" height="280" fill="#475569" rx="3"/>
-                        <rect x="185" y="395" width="16" height="20" rx="2" fill="#fef3c7" opacity="0.7"/>
-                        <rect x="207" y="395" width="16" height="20" rx="2" fill="#bfdbfe" opacity="0.7"/>
-                        <rect x="229" y="395" width="16" height="20" rx="2" fill="#fef3c7" opacity="0.7"/>
-                        <rect x="251" y="395" width="16" height="20" rx="2" fill="#bfdbfe" opacity="0.7"/>
-                        <rect x="185" y="425" width="16" height="20" rx="2" fill="#bfdbfe" opacity="0.7"/>
-                        <rect x="207" y="425" width="16" height="20" rx="2" fill="#fef3c7" opacity="0.7"/>
-                        <rect x="229" y="425" width="16" height="20" rx="2" fill="#bfdbfe" opacity="0.7"/>
-                        <rect x="251" y="425" width="16" height="20" rx="2" fill="#fef3c7" opacity="0.7"/>
-
-                        <rect x="310" y="450" width="60" height="210" fill="#6b7280" rx="3"/>
-
-                        <rect x="500" y="400" width="80" height="260" fill="#475569" rx="3"/>
-                        <rect x="610" y="440" width="65" height="220" fill="#64748b" rx="3"/>
-
-                        <rect x="820" y="420" width="75" height="240" fill="#6b7280" rx="3"/>
-                        <rect x="910" y="380" width="95" height="280" fill="#475569" rx="3"/>
-
-                        <rect x="1100" y="410" width="70" height="250" fill="#64748b" rx="3"/>
-                        <rect x="1190" y="450" width="55" height="210" fill="#6b7280" rx="3"/>
-                        <rect x="1280" y="390" width="85" height="270" fill="#475569" rx="3"/>
-
-                        <rect x="1480" y="430" width="70" height="230" fill="#64748b" rx="3"/>
-                        <rect x="1570" y="400" width="80" height="260" fill="#475569" rx="3"/>
-                        <rect x="1680" y="440" width="65" height="220" fill="#6b7280" rx="3"/>
-                        <rect x="1780" y="410" width="90" height="250" fill="#475569" rx="3"/>
-                    </g>
-
-                    <!-- Grass Strip -->
-                    <rect x="0" y="650" width="1920" height="30" fill="url(#grassGrad)"/>
-
-                    <!-- Road -->
-                    <rect x="0" y="680" width="1920" height="200" fill="url(#roadGrad)"/>
-
-                    <!-- Road Lines -->
-                    <g id="roadLines">
-                        <rect x="0" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="120" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="240" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="360" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="480" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="600" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="720" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="840" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="960" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="1080" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="1200" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="1320" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="1440" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="1560" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="1680" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                        <rect x="1800" y="775" width="80" height="4" rx="2" fill="#fbbf24" opacity="0.6"/>
-                    </g>
-
-                    <!-- Sidewalk bottom -->
-                    <rect x="0" y="880" width="1920" height="20" fill="#d1d5db"/>
-                    <rect x="0" y="900" width="1920" height="180" fill="#e5e7eb"/>
-
-                    <!-- ===== TRUCK ===== -->
-                    <g id="truckGroup" transform="translate(-400, 700)">
-                        <!-- Truck shadow -->
-                        <ellipse cx="160" cy="155" rx="180" ry="12" fill="rgba(0,0,0,0.15)"/>
-
-                        <!-- Cargo Box -->
-                        <rect x="0" y="10" width="220" height="120" rx="6" fill="#dc2626"/>
-                        <rect x="3" y="13" width="214" height="114" rx="4" fill="none" stroke="#b91c1c" stroke-width="2"/>
-                        <!-- Cargo stripes -->
-                        <rect x="10" y="20" width="200" height="3" rx="1" fill="#ef4444" opacity="0.5"/>
-                        <rect x="10" y="117" width="200" height="3" rx="1" fill="#ef4444" opacity="0.5"/>
-                        <!-- Text on truck -->
-                        <text x="110" y="62" text-anchor="middle" fill="white" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="700" letter-spacing="2">GÜVEN</text>
-                        <text x="110" y="88" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="400" letter-spacing="4">NAKLİYAT</text>
-                        <!-- Cargo door lines -->
-                        <line x1="110" y1="100" x2="110" y2="130" stroke="#b91c1c" stroke-width="1.5"/>
-                        <circle cx="106" cy="115" r="2.5" fill="#991b1b"/>
-                        <circle cx="114" cy="115" r="2.5" fill="#991b1b"/>
-
-                        <!-- Cab -->
-                        <path d="M220,40 L270,40 Q295,40 300,55 L310,90 Q312,100 310,110 L310,130 L220,130 Z" fill="#b91c1c"/>
-                        <path d="M222,42 L268,42 Q292,42 297,56 L307,90 Q309,98 307,108 L307,128 L222,128 Z" fill="none" stroke="#991b1b" stroke-width="1"/>
-                        <!-- Windshield -->
-                        <path d="M235,48 L265,48 Q288,48 292,60 L300,88 L235,88 Z" fill="#bfdbfe" opacity="0.9"/>
-                        <path d="M235,48 L265,48 Q288,48 292,60 L300,88 L235,88 Z" fill="none" stroke="#93c5fd" stroke-width="1"/>
-                        <!-- Headlight -->
-                        <rect x="305" y="95" width="8" height="14" rx="3" fill="#fbbf24"/>
-                        <rect x="306" y="97" width="6" height="10" rx="2" fill="#fef3c7"/>
-                        <!-- Mirror -->
-                        <rect x="228" y="55" width="4" height="20" rx="2" fill="#6b7280"/>
-                        <rect x="222" y="52" width="8" height="10" rx="2" fill="#9ca3af"/>
-                        <!-- Door -->
-                        <rect x="238" y="92" width="30" height="34" rx="3" fill="none" stroke="#991b1b" stroke-width="1.5"/>
-                        <circle cx="263" cy="109" r="2.5" fill="#991b1b"/>
-
-                        <!-- Bumper -->
-                        <rect x="300" y="125" width="18" height="8" rx="2" fill="#4b5563"/>
-
-                        <!-- Rear Wheel -->
-                        <g transform="translate(60, 140)">
-                            <circle cx="0" cy="0" r="24" fill="#1e293b"/>
-                            <circle cx="0" cy="0" r="20" fill="#334155"/>
-                            <circle class="wheel-spin" cx="0" cy="0" r="16" fill="none" stroke="#475569" stroke-width="3"/>
-                            <circle cx="0" cy="0" r="8" fill="#64748b"/>
-                            <circle cx="0" cy="0" r="4" fill="#94a3b8"/>
-                            <line class="wheel-spin" x1="-12" y1="0" x2="12" y2="0" stroke="#64748b" stroke-width="2"/>
-                            <line class="wheel-spin" x1="0" y1="-12" x2="0" y2="12" stroke="#64748b" stroke-width="2"/>
-                        </g>
-
-                        <!-- Second Rear Wheel -->
-                        <g transform="translate(100, 140)">
-                            <circle cx="0" cy="0" r="24" fill="#1e293b"/>
-                            <circle cx="0" cy="0" r="20" fill="#334155"/>
-                            <circle class="wheel-spin" cx="0" cy="0" r="16" fill="none" stroke="#475569" stroke-width="3"/>
-                            <circle cx="0" cy="0" r="8" fill="#64748b"/>
-                            <circle cx="0" cy="0" r="4" fill="#94a3b8"/>
-                            <line class="wheel-spin" x1="-12" y1="0" x2="12" y2="0" stroke="#64748b" stroke-width="2"/>
-                            <line class="wheel-spin" x1="0" y1="-12" x2="0" y2="12" stroke="#64748b" stroke-width="2"/>
-                        </g>
-
-                        <!-- Front Wheel -->
-                        <g transform="translate(275, 140)">
-                            <circle cx="0" cy="0" r="24" fill="#1e293b"/>
-                            <circle cx="0" cy="0" r="20" fill="#334155"/>
-                            <circle class="wheel-spin" cx="0" cy="0" r="16" fill="none" stroke="#475569" stroke-width="3"/>
-                            <circle cx="0" cy="0" r="8" fill="#64748b"/>
-                            <circle cx="0" cy="0" r="4" fill="#94a3b8"/>
-                            <line class="wheel-spin" x1="-12" y1="0" x2="12" y2="0" stroke="#64748b" stroke-width="2"/>
-                            <line class="wheel-spin" x1="0" y1="-12" x2="0" y2="12" stroke="#64748b" stroke-width="2"/>
-                        </g>
-
-                        <!-- Exhaust smoke -->
-                        <g id="exhaustSmoke" opacity="0.3">
-                            <circle cx="-10" cy="130" r="6" fill="#9ca3af"/>
-                            <circle cx="-25" cy="125" r="8" fill="#9ca3af" opacity="0.6"/>
-                            <circle cx="-42" cy="118" r="10" fill="#9ca3af" opacity="0.3"/>
-                        </g>
-                    </g>
-
-                    <!-- Trees on sidewalk -->
-                    <g id="treesGroup">
-                        <g transform="translate(100, 870)">
-                            <rect x="-4" y="-40" width="8" height="40" fill="#92400e" rx="2"/>
-                            <circle cx="0" cy="-50" r="22" fill="#22c55e" opacity="0.8"/>
-                            <circle cx="-12" cy="-42" r="16" fill="#16a34a" opacity="0.7"/>
-                            <circle cx="12" cy="-44" r="14" fill="#4ade80" opacity="0.6"/>
-                        </g>
-                        <g transform="translate(500, 870)">
-                            <rect x="-4" y="-40" width="8" height="40" fill="#92400e" rx="2"/>
-                            <circle cx="0" cy="-50" r="22" fill="#22c55e" opacity="0.8"/>
-                            <circle cx="-12" cy="-42" r="16" fill="#16a34a" opacity="0.7"/>
-                        </g>
-                        <g transform="translate(950, 870)">
-                            <rect x="-4" y="-40" width="8" height="40" fill="#92400e" rx="2"/>
-                            <circle cx="0" cy="-50" r="22" fill="#22c55e" opacity="0.8"/>
-                            <circle cx="14" cy="-45" r="15" fill="#4ade80" opacity="0.6"/>
-                        </g>
-                        <g transform="translate(1400, 870)">
-                            <rect x="-4" y="-40" width="8" height="40" fill="#92400e" rx="2"/>
-                            <circle cx="0" cy="-50" r="22" fill="#22c55e" opacity="0.8"/>
-                            <circle cx="-10" cy="-40" r="14" fill="#16a34a" opacity="0.7"/>
-                        </g>
-                        <g transform="translate(1800, 870)">
-                            <rect x="-4" y="-40" width="8" height="40" fill="#92400e" rx="2"/>
-                            <circle cx="0" cy="-50" r="22" fill="#22c55e" opacity="0.8"/>
-                        </g>
-                    </g>
-                </svg>
-
-                <!-- Hero Content Overlay -->
-                <div id="heroContent" class="absolute inset-0 z-10 flex items-center justify-center">
-                    <div class="text-center px-6 py-16 max-w-4xl relative">
-                        <div class="absolute inset-0 -m-8 rounded-3xl" style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 55%, transparent 75%);"></div>
-                        <p class="relative text-sm md:text-base uppercase tracking-[0.25em] text-red-400 font-medium mb-4" style="text-shadow: 0 1px 10px rgba(0,0,0,0.8);">SİLİVRİ GÜVEN NAKLİYAT</p>
-                        <h1 class="relative text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight mb-6 text-white" style="text-shadow: 0 2px 30px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.5);">
-                            Taşınmak mı istiyorsunuz?<br>
-                            Güvenle taşıyoruz.
-                        </h1>
-                        <p class="relative text-lg md:text-xl text-white/90 font-medium mb-10" style="text-shadow: 0 1px 20px rgba(0,0,0,0.9);">
-                            Evden eve nakliyat, ofis taşıma, şehirler arası — hepsi sigortalı.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center relative">
-                            <a href="tel:+905414611984" class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-red-600 text-white font-bold text-lg rounded-xl hover:bg-red-700 active:scale-[0.98] transition-all shadow-lg shadow-red-600/30">
-                                <i class="ti ti-phone text-xl"></i>
-                                Hemen Ara
-                            </a>
-                            <a href="#teklif" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/40 text-white font-medium rounded-xl hover:bg-white/10 active:scale-[0.98] transition-all">
-                                <i class="ti ti-file-text text-lg"></i>
-                                Ücretsiz Teklif Al
-                            </a>
-                        </div>
+        <!-- ============ HERO - Video Background ============ -->
+        <section class="relative h-[100dvh] overflow-hidden">
+            <!-- Video (desktop) -->
+            <video class="absolute inset-0 w-full h-full object-cover hidden md:block" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+                <source src="assets/hero-video.mp4" type="video/mp4">
+            </video>
+            <!-- Poster (mobile) -->
+            <img src="assets/hero-poster.jpg" alt="Güven Nakliyat" class="absolute inset-0 w-full h-full object-cover md:hidden">
+            <!-- Dark overlay -->
+            <div class="absolute inset-0 bg-black/50 z-[1]"></div>
+            <!-- Hero Content -->
+            <div class="absolute inset-0 z-10 flex items-center justify-center">
+                <div class="text-center px-6 max-w-4xl">
+                    <p class="text-sm md:text-base uppercase tracking-[0.25em] text-red-400 font-medium mb-4">SİLİVRİ GÜVEN NAKLİYAT</p>
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight mb-6 text-white">
+                        Taşınmak mı istiyorsunuz?<br>
+                        Güvenle taşıyoruz.
+                    </h1>
+                    <p class="text-lg md:text-xl text-white/90 font-medium mb-10">
+                        Evden eve nakliyat, ofis taşıma, şehirler arası — hepsi sigortalı.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="tel:+905414611984" class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-red-600 text-white font-bold text-lg rounded-xl hover:bg-red-700 active:scale-[0.98] transition-all shadow-lg shadow-red-600/30">
+                            <i class="ti ti-phone text-xl"></i>
+                            Hemen Ara
+                        </a>
+                        <a href="#teklif" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/40 text-white font-medium rounded-xl hover:bg-white/10 active:scale-[0.98] transition-all">
+                            <i class="ti ti-file-text text-lg"></i>
+                            Ücretsiz Teklif Al
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1037,70 +797,6 @@
                     mobileMenu.classList.remove('menu-open');
                     menuIcon.className = 'ti ti-menu-2 text-xl';
                 });
-            }
-
-            // ===== SCROLL-DRIVEN TRUCK ANIMATION =====
-            var heroSection = document.getElementById('heroAnimation');
-            var heroContent = document.getElementById('heroContent');
-            var truckGroup = document.getElementById('truckGroup');
-            var nearBuildings = document.getElementById('nearBuildings');
-            var farBuildings = document.getElementById('farBuildings');
-            var cloudsGroup = document.getElementById('cloudsGroup');
-            var roadLines = document.getElementById('roadLines');
-            var treesGroup = document.getElementById('treesGroup');
-            var wheelSpins = document.querySelectorAll('.wheel-spin');
-
-            var scrollProgress = 0;
-            var smoothProgress = 0;
-
-            if (heroSection && truckGroup) {
-                document.addEventListener('scroll', function() {
-                    var rect = heroSection.getBoundingClientRect();
-                    var h = heroSection.offsetHeight - window.innerHeight;
-                    scrollProgress = Math.min(1, Math.max(0, -rect.top) / h);
-                }, { passive: true });
-
-                function animate() {
-                    smoothProgress += (scrollProgress - smoothProgress) * 0.08;
-                    if (Math.abs(scrollProgress - smoothProgress) < 0.0005) smoothProgress = scrollProgress;
-
-                    // Truck moves from left (-400) to right (2200)
-                    var truckX = -400 + (smoothProgress * 2600);
-                    truckGroup.setAttribute('transform', 'translate(' + truckX + ', 700)');
-
-                    // Wheel rotation
-                    var wheelDeg = smoothProgress * 2880;
-                    for (var w = 0; w < wheelSpins.length; w++) {
-                        wheelSpins[w].setAttribute('transform', 'rotate(' + wheelDeg + ')');
-                    }
-
-                    // Near buildings parallax (move left)
-                    nearBuildings.setAttribute('transform', 'translate(' + (-smoothProgress * 400) + ', 0)');
-
-                    // Far buildings parallax (slower)
-                    farBuildings.setAttribute('transform', 'translate(' + (-smoothProgress * 150) + ', 0)');
-
-                    // Clouds drift
-                    cloudsGroup.setAttribute('transform', 'translate(' + (-smoothProgress * 200) + ', 0)');
-
-                    // Road lines move
-                    roadLines.setAttribute('transform', 'translate(' + (-smoothProgress * 500) + ', 0)');
-
-                    // Trees parallax
-                    if (treesGroup) {
-                        treesGroup.setAttribute('transform', 'translate(' + (-smoothProgress * 350) + ', 0)');
-                    }
-
-                    // Hero content fade
-                    if (heroContent) {
-                        var fade = 1 - Math.min(1, smoothProgress * 3);
-                        heroContent.style.opacity = Math.max(0, fade);
-                        heroContent.style.transform = 'translateY(' + (smoothProgress * -80) + 'px)';
-                    }
-
-                    requestAnimationFrame(animate);
-                }
-                requestAnimationFrame(animate);
             }
 
             // ===== SCROLL REVEAL =====
