@@ -338,14 +338,23 @@
             menuBtn.addEventListener('click', function() { var o = mobileMenu.classList.contains('menu-open'); mobileMenu.classList.toggle('menu-open'); menuIcon.className = o ? 'ti ti-menu-2 text-xl' : 'ti ti-x text-xl'; });
             document.querySelectorAll('.mobile-link').forEach(function(l) { l.addEventListener('click', function() { mobileMenu.classList.remove('menu-open'); menuIcon.className = 'ti ti-menu-2 text-xl'; }); });
 
-            // Contact form → WhatsApp
+            // Contact form → Netlify + WhatsApp
             var form = document.getElementById('contactForm');
             if (form) {
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    var inputs = form.querySelectorAll('input, select, textarea');
+                    var formData = new FormData(form);
+                    fetch('/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: new URLSearchParams(formData).toString()
+                    });
+                    var labels = { 'ad-soyad':'Ad Soyad', 'telefon':'Telefon', 'email':'E-posta', 'konu':'Konu', 'mesaj':'Mesaj' };
                     var data = [];
-                    inputs.forEach(function(inp) { if (inp.value && inp.previousElementSibling) data.push(inp.previousElementSibling.textContent.replace(' *','') + ': ' + inp.value); });
+                    for (var key in labels) {
+                        var val = formData.get(key);
+                        if (val) data.push(labels[key] + ': ' + val);
+                    }
                     var msg = 'Merhaba, web sitesinden yazıyorum.\n\n' + data.join('\n');
                     window.open('https://wa.me/905414611984?text=' + encodeURIComponent(msg), '_blank');
                 });

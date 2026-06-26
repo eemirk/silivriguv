@@ -817,18 +817,23 @@
                 }
             }
 
-            // ===== QUOTE FORM (WhatsApp redirect) =====
+            // ===== QUOTE FORM (Netlify + WhatsApp) =====
             var form = document.getElementById('quoteForm');
             if (form) {
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    var inputs = form.querySelectorAll('input, select, textarea');
-                    var data = [];
-                    inputs.forEach(function(inp) {
-                        if (inp.value && inp.previousElementSibling) {
-                            data.push(inp.previousElementSibling.textContent.replace(' *', '') + ': ' + inp.value);
-                        }
+                    var formData = new FormData(form);
+                    fetch('/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: new URLSearchParams(formData).toString()
                     });
+                    var labels = { 'ad-soyad':'Ad Soyad', 'telefon':'Telefon', 'nereden':'Nereden', 'nereye':'Nereye', 'tarih':'Tarih', 'oda-sayisi':'Oda Sayısı', 'hizmet-turu':'Hizmet Türü', 'notlar':'Notlar' };
+                    var data = [];
+                    for (var key in labels) {
+                        var val = formData.get(key);
+                        if (val) data.push(labels[key] + ': ' + val);
+                    }
                     var msg = 'Merhaba, nakliyat teklifi almak istiyorum.\n\n' + data.join('\n');
                     window.open('https://wa.me/905414611984?text=' + encodeURIComponent(msg), '_blank');
                 });
