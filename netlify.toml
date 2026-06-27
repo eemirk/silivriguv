@@ -48,11 +48,6 @@
   status = 200
 
 [[redirects]]
-  from = "/araclarimiz"
-  to = "/araclarimiz.html"
-  status = 200
-
-[[redirects]]
   from = "/hakkimizda"
   to = "/hakkimizda.html"
   status = 200
