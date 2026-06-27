@@ -80,9 +80,9 @@
 
     <!-- Navigation -->
     <nav class="fixed top-[48px] sm:top-[52px] left-0 right-0 z-40 bg-white shadow-[0_2px_15px_rgba(0,0,0,0.08)] border-b border-zinc-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="/">
-                <img src="/assets/silivri-guven-nakliyat-logo.png" alt="Silivri Güven Nakliyat" class="h-14 sm:h-16 w-auto">
+        <div class="max-w-7xl mx-auto px-6 min-h-[70px] sm:min-h-[90px] flex items-center justify-between">
+            <a href="/" class="py-[5px]">
+                <img src="/assets/silivri-guven-nakliyat-logo.png" alt="Silivri Güven Nakliyat" class="max-h-[60px] sm:max-h-[80px] w-auto">
             </a>
             <div class="hidden lg:flex items-center gap-5">
                 <a href="/" class="text-[16px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors">Ana Sayfa</a>
@@ -144,10 +144,21 @@
 
     <main>
         <!-- Hero -->
-        <section class="bg-[#1a1f3c] pt-44 pb-16 px-6">
+        <section class="bg-[#1a1f3c] px-6" style="padding-top:80px;padding-bottom:80px;min-height:200px;">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 reveal">Hizmetlerimiz</h1>
-                <p class="text-lg text-white/70 reveal">Evden eve nakliyattan kurumsal taşımacılığa, ambalajlamadan depolamaya -- tüm taşınma ihtiyaçlarınız için profesyonel çözümler.</p>
+                <h1 style="font-size:2.5rem;font-weight:700;color:#ffffff;margin-bottom:1rem;" class="reveal">Hizmetlerimiz</h1>
+                <p style="font-size:1rem;color:rgba(255,255,255,0.8);" class="reveal">Evden eve nakliyattan kurumsal taşımacılığa, ambalajlamadan depolamaya -- tüm taşınma ihtiyaçlarınız için profesyonel çözümler.</p>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <section class="py-4 px-6 bg-white border-b border-zinc-100">
+            <div class="max-w-7xl mx-auto">
+                <nav class="flex items-center gap-2 text-sm text-zinc-400">
+                    <a href="/" class="hover:text-red-600 transition-colors">Ana Sayfa</a>
+                    <i class="ti ti-chevron-right text-xs"></i>
+                    <span class="text-zinc-700 font-medium">Hizmetlerimiz</span>
+                </nav>
             </div>
         </section>
 

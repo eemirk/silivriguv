@@ -63,18 +63,18 @@
   status = 200
 
 [[redirects]]
-  from = "/blog-silivri-nakliyat-fiyatlari"
-  to = "/blog-silivri-nakliyat-fiyatlari.html"
+  from = "/blog/silivri-nakliyat-fiyatlari"
+  to = "/blog/silivri-nakliyat-fiyatlari.html"
   status = 200
 
 [[redirects]]
-  from = "/blog-tasinma-kontrol-listesi"
-  to = "/blog-tasinma-kontrol-listesi.html"
+  from = "/blog/tasinma-kontrol-listesi"
+  to = "/blog/tasinma-kontrol-listesi.html"
   status = 200
 
 [[redirects]]
-  from = "/blog-esya-paketleme-rehberi"
-  to = "/blog-esya-paketleme-rehberi.html"
+  from = "/blog/esya-paketleme-rehberi"
+  to = "/blog/esya-paketleme-rehberi.html"
   status = 200
 
 [[redirects]]
