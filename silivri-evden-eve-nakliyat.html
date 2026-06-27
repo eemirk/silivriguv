@@ -35,7 +35,9 @@
     </script>
 
     <style>
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { overflow-x: hidden; max-width: 100%; }
+        img, section, div { max-width: 100%; }
 
         @media (prefers-reduced-motion: no-preference) {
             .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
@@ -52,7 +54,7 @@
         }
 
         #mobileMenu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease; opacity: 0; }
-        #mobileMenu.menu-open { max-height: 800px; opacity: 1; }
+        #mobileMenu.menu-open { max-height: 1200px; opacity: 1; }
         #mobileMenu .mobile-link { opacity: 0; transform: translateX(-12px); transition: opacity 0.3s ease, transform 0.3s ease; }
         #mobileMenu.menu-open .mobile-link { opacity: 1; transform: translateX(0); }
         #mobileMenu.menu-open .mobile-link:nth-child(1) { transition-delay: 50ms; }
@@ -153,9 +155,9 @@
 
     <!-- ============ NAVIGATION ============ -->
     <nav class="fixed top-[48px] sm:top-[52px] left-0 right-0 z-40 bg-white shadow-[0_2px_15px_rgba(0,0,0,0.08)] border-b border-zinc-100">
-        <div class="max-w-7xl mx-auto px-6 min-h-[70px] sm:min-h-[90px] flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-6 min-h-[75px] flex items-center justify-between">
             <a href="/" class="py-[5px]">
-                <img src="/assets/silivri-guven-nakliyat-logo.png" alt="Silivri Güven Nakliyat" class="max-h-[60px] sm:max-h-[80px] w-auto">
+                <img src="/assets/silivri-guven-nakliyat-logo.png" alt="Silivri Güven Nakliyat" style="max-height:55px;width:auto;">
             </a>
 
             <div class="hidden lg:flex items-center gap-5">
@@ -200,16 +202,29 @@
         </div>
 
         <div id="mobileMenu" class="lg:hidden bg-white border-b border-zinc-100 shadow-lg">
-            <div class="px-6 py-5 flex flex-col gap-5">
+            <div class="px-6 py-5 flex flex-col gap-4">
                 <a href="/" class="text-[15px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors mobile-link">Ana Sayfa</a>
-                <a href="/hizmetler" class="text-[15px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors mobile-link">Hizmetler</a>
-                <a href="/silivri-evden-eve-nakliyat" class="text-[15px] font-semibold text-red-600 transition-colors mobile-link">Evden Eve Nakliyat</a>
-                <a href="/silivri-sehir-ici-nakliyat" class="text-[15px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors mobile-link">Şehir İçi Nakliyat</a>
-                <a href="/silivri-sehirler-arasi-nakliyat" class="text-[15px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors mobile-link">Şehirler Arası Nakliyat</a>
-                <a href="/silivri-ofis-tasima" class="text-[15px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors mobile-link">Ofis Taşıma</a>
-                <a href="/silivri-asansorlu-nakliyat" class="text-[15px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors mobile-link">Asansörlü Nakliyat</a>
-                <a href="/hakkimizda" class="text-[15px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors mobile-link">Hakkımızda</a>
-                <a href="/sss" class="text-[15px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors mobile-link">SSS</a>
+                <div class="mobile-link">
+                    <p class="text-[15px] font-semibold text-[#1a1f3c] mb-2">Hizmetler</p>
+                    <div class="pl-4 flex flex-col gap-2 border-l-2 border-red-600/20">
+                        <a href="/silivri-evden-eve-nakliyat" class="text-[13px] text-zinc-500 hover:text-red-600 transition-colors">Evden Eve Nakliyat</a>
+                        <a href="/silivri-sehir-ici-nakliyat" class="text-[13px] text-zinc-500 hover:text-red-600 transition-colors">Şehir İçi Nakliyat</a>
+                        <a href="/silivri-sehirler-arasi-nakliyat" class="text-[13px] text-zinc-500 hover:text-red-600 transition-colors">Şehirler Arası Nakliyat</a>
+                        <a href="/silivri-ofis-tasima" class="text-[13px] text-zinc-500 hover:text-red-600 transition-colors">Ofis Taşıma</a>
+                        <a href="/silivri-fabrika-tasimaciligi" class="text-[13px] text-zinc-500 hover:text-red-600 transition-colors">Fabrika Taşımacılığı</a>
+                        <a href="/silivri-parsiyel-nakliyat" class="text-[13px] text-zinc-500 hover:text-red-600 transition-colors">Parsiyel Nakliyat</a>
+                        <a href="/silivri-ambalajlama-paketleme" class="text-[13px] text-zinc-500 hover:text-red-600 transition-colors">Ambalajlama</a>
+                        <a href="/silivri-esya-depolama" class="text-[13px] text-zinc-500 hover:text-red-600 transition-colors">Eşya Depolama</a>
+                        <a href="/silivri-asansorlu-nakliyat" class="text-[13px] text-zinc-500 hover:text-red-600 transition-colors">Asansörlü Nakliyat</a>
+                    </div>
+                </div>
+                <div class="mobile-link">
+                    <p class="text-[15px] font-semibold text-[#1a1f3c] mb-2">Kurumsal</p>
+                    <div class="pl-4 flex flex-col gap-2 border-l-2 border-red-600/20">
+                        <a href="/hakkimizda" class="text-[13px] text-zinc-500 hover:text-red-600 transition-colors">Hakkımızda</a>
+                        <a href="/sss" class="text-[13px] text-zinc-500 hover:text-red-600 transition-colors">SSS</a>
+                    </div>
+                </div>
                 <a href="/galeri" class="text-[15px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors mobile-link">Galeri</a>
                 <a href="/blog" class="text-[15px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors mobile-link">Blog</a>
                 <a href="/iletisim" class="text-[15px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors mobile-link">İletişim</a>
@@ -226,8 +241,8 @@
 
         <!-- ============ HERO ============ -->
         <section class="relative pt-44">
-            <div class="relative h-[60vh] min-h-[400px] max-h-[600px] overflow-hidden bg-zinc-800">
-                <img src="assets/evden-eve-hero.jpg" alt="Silivri evden eve nakliyat hizmeti" class="absolute inset-0 w-full h-full object-cover opacity-60">
+            <div class="relative h-[60vh] min-h-[400px] max-h-[600px] overflow-hidden bg-zinc-800" style="min-height:450px;">
+                <img src="assets/evden-eve-hero.jpg" alt="Silivri evden eve nakliyat hizmeti" class="absolute inset-0 w-full h-full object-cover object-center opacity-60">
                 <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-zinc-900/40 to-zinc-900/20"></div>
                 <div class="relative z-10 h-full flex items-center justify-center">
                     <div class="text-center px-6 max-w-4xl">

@@ -35,7 +35,9 @@
     </script>
 
     <style>
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { overflow-x: hidden; max-width: 100%; }
+        img, section, div { max-width: 100%; }
         @media (prefers-reduced-motion: no-preference) {
             .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
             .reveal.revealed { opacity: 1; transform: translateY(0); }
@@ -144,9 +146,9 @@
 
     <!-- Navigation -->
     <nav class="fixed top-[48px] sm:top-[52px] left-0 right-0 z-40 bg-white shadow-[0_2px_15px_rgba(0,0,0,0.08)] border-b border-zinc-100">
-        <div class="max-w-7xl mx-auto px-6 min-h-[70px] sm:min-h-[90px] flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-6 min-h-[75px] flex items-center justify-between">
             <a href="/" class="py-[5px]">
-                <img src="/assets/silivri-guven-nakliyat-logo.png" alt="Silivri Güven Nakliyat" class="max-h-[60px] sm:max-h-[80px] w-auto">
+                <img src="/assets/silivri-guven-nakliyat-logo.png" alt="Silivri Güven Nakliyat" style="max-height:55px;width:auto;">
             </a>
             <div class="hidden lg:flex items-center gap-5">
                 <a href="/" class="text-[16px] font-semibold text-[#1a1f3c] hover:text-red-600 transition-colors">Ana Sayfa</a>
